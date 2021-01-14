@@ -71,7 +71,6 @@ class AndesCheckboxDefaultView: UIView, AndesCheckboxView {
         self.addSubview(checkboxView)
         checkboxView.pinToSuperview()
         checkboxView.translatesAutoresizingMaskIntoConstraints = false
-        checkboxView.backgroundColor = config.buttonBackgroundColor
         initialize()
         updateView()
     }
@@ -84,6 +83,7 @@ class AndesCheckboxDefaultView: UIView, AndesCheckboxView {
     func updateView() {
         clearView()
         self.label.text = config.title
+        checkboxView.backgroundColor = config.buttonBackgroundColor
         updateBoxesViews()
         updateBoxesBorders()
         updateIcons()

@@ -70,7 +70,6 @@ class AndesRadioButtonDefaultView: UIView, AndesRadioButtonView {
         radioButtonView.pinToSuperview()
         radioButtonView.translatesAutoresizingMaskIntoConstraints = false
         leftRadioButton.tapCallback = radioButtonTapped
-        radioButtonView.backgroundColor = config.buttonBackgroundColor
         self.radioButtonLabel.isAccessibilityElement = false
         updateView()
     }
@@ -79,6 +78,7 @@ class AndesRadioButtonDefaultView: UIView, AndesRadioButtonView {
         self.radioButtonLabel.text = config.title
         self.radioButtonLabel.setAndesStyle(style: AndesStyleSheetManager.styleSheet.bodyM(color: config.textColor))
         self.radioButtonLabel.numberOfLines = config.titleNumberOfLines ?? 0
+        radioButtonView.backgroundColor = config.buttonBackgroundColor
         radioButtonLabel.lineBreakMode = .byTruncatingTail
         setupButtonView()
         updateRadioButtonsStyles()
