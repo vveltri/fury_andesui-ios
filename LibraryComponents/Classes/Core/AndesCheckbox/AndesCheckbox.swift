@@ -38,6 +38,20 @@ import UIKit
             self.updateContentView()
         }
     }
+    
+    /// Sets the background color of the AndesCaheckbox , default white
+    @objc public var buttonBackgroundColor: UIColor = .white{
+        didSet {
+            self.updateContentView()
+        }
+    }
+    
+    /// Sets the selected background color of the AndesCaheckbox , default white
+    @objc public var selectedBackgroundColor: UIColor?{
+        didSet {
+            self.updateContentView()
+        }
+    }
 
     /// Callback invoked when checkbox button is tapped
     internal var didTapped: ((AndesCheckbox) -> Void)?
@@ -57,12 +71,14 @@ import UIKit
         setup()
     }
 
-    @objc public init(type: AndesCheckboxType, align: AndesCheckboxAlign, status: AndesCheckboxStatus, title: String) {
+    @objc public init(type: AndesCheckboxType, align: AndesCheckboxAlign, status: AndesCheckboxStatus, title: String, buttonBackgroundColor: UIColor = .white, selectedBackgroundColor: UIColor? = nil) {
         super.init(frame: .zero)
         self.title = title
         self.type = type
         self.align = align
         self.status = status
+        self.buttonBackgroundColor = buttonBackgroundColor
+        self.selectedBackgroundColor = selectedBackgroundColor
         setup()
     }
 

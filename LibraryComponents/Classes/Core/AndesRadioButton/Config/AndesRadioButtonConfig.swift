@@ -16,6 +16,7 @@ internal struct AndesRadioButtonConfig {
     var type: AndesRadioButtonTypeProtocol! = AndesRadioButtonTypeIdle()
     var filled: Bool = false
     var titleNumberOfLines: Int?
+    var buttonBackgroundColor: UIColor = .white
 
     init () {
 
@@ -29,5 +30,6 @@ internal struct AndesRadioButtonConfig {
         self.tintColor = type.tintColor
         self.filled = radiobutton.status == .selected && radiobutton.type != .error
         self.titleNumberOfLines = radiobutton.titleNumberOfLines
+        self.buttonBackgroundColor = radiobutton.buttonBackgroundColor
     }
 }

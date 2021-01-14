@@ -45,6 +45,13 @@ import UIKit
             self.updateContentView()
         }
     }
+    
+    /// Sets the background color of the RadioButton , default white
+    @objc public var buttonBackgroundColor: UIColor = .white{
+        didSet {
+            self.updateContentView()
+        }
+    }
 
     /// Callback invoked when RadioButton  is tapped
     internal var didTapped: ((AndesRadioButton) -> Void)?
@@ -64,12 +71,13 @@ import UIKit
         setup()
     }
 
-    @objc public init(type: AndesRadioButtonType, align: AndesRadioButtonAlign, status: AndesRadioButtonStatus, title: String) {
+    @objc public init(type: AndesRadioButtonType, align: AndesRadioButtonAlign, status: AndesRadioButtonStatus, title: String, buttonBackgroundColor: UIColor = .white) {
         super.init(frame: .zero)
         self.title = title
         self.type = type
         self.align = align
         self.status = status
+        self.buttonBackgroundColor = buttonBackgroundColor
         setup()
     }
 

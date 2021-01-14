@@ -70,6 +70,7 @@ class AndesRadioButtonDefaultView: UIView, AndesRadioButtonView {
         radioButtonView.pinToSuperview()
         radioButtonView.translatesAutoresizingMaskIntoConstraints = false
         leftRadioButton.tapCallback = radioButtonTapped
+        radioButtonView.backgroundColor = config.buttonBackgroundColor
         self.radioButtonLabel.isAccessibilityElement = false
         updateView()
     }
@@ -95,6 +96,7 @@ class AndesRadioButtonDefaultView: UIView, AndesRadioButtonView {
             self.labelToLeftButtonConstraint.priority = .defaultHigh
             self.labelToLeadingConstraint.priority = .defaultLow
             self.leftRadioButton.filled = config.filled
+            self.leftRadioButton.backgroundColor = config.buttonBackgroundColor
 
             radiobuttonConstraint = NSLayoutConstraint(item: self.radioButtonLabel!, attribute: .leading, relatedBy: .equal, toItem: self.leftRadioButton!, attribute: .trailing, multiplier: 1, constant: 0)
         } else {
@@ -105,6 +107,7 @@ class AndesRadioButtonDefaultView: UIView, AndesRadioButtonView {
             self.labelToLeftButtonConstraint.priority = .defaultLow
             self.labelToLeadingConstraint.priority = .defaultHigh
             self.rightRadioButton.filled = config.filled
+            self.rightRadioButton.backgroundColor = config.buttonBackgroundColor
 
             radiobuttonConstraint = NSLayoutConstraint(item: self.rightRadioButton!, attribute: .leading, relatedBy: .equal, toItem: radioButtonLabel, attribute: .trailing, multiplier: 1, constant: 0)
         }

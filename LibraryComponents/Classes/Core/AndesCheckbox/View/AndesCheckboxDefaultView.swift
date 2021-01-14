@@ -71,6 +71,7 @@ class AndesCheckboxDefaultView: UIView, AndesCheckboxView {
         self.addSubview(checkboxView)
         checkboxView.pinToSuperview()
         checkboxView.translatesAutoresizingMaskIntoConstraints = false
+        checkboxView.backgroundColor = config.buttonBackgroundColor
         initialize()
         updateView()
     }
