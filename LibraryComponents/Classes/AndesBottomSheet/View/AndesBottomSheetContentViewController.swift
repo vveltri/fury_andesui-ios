@@ -127,7 +127,11 @@ class AndesBottomSheetContentViewController: UIViewController {
         let targetSize = CGSize(width: view.bounds.width, height: UIView.layoutFittingCompressedSize.height)
         let headerSize = headerContentView.systemLayoutSizeFitting(targetSize)
         let contentSize = calculateContentSize()
-        let newSize = CGSize(width: view.bounds.width, height: headerSize.height + contentSize.height)
+        var safeAreaHeight: CGFloat = 0
+        if #available(iOS 11.0, *), let window = UIApplication.shared.keyWindow {
+            safeAreaHeight = window.safeAreaInsets.bottom
+        }
+        let newSize = CGSize(width: view.bounds.width, height: headerSize.height + contentSize.height + safeAreaHeight)
         if newSize != currentSize {
             preferredContentSize = newSize
         }
