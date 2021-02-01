@@ -16,6 +16,7 @@
 @property(weak, nonatomic) IBOutlet AndesTextField *textField;
 @property(weak, nonatomic) IBOutlet AndesTextField *placelholderField;
 @property(weak, nonatomic) IBOutlet UISegmentedControl *segmentedControl;
+@property(weak, nonatomic) IBOutlet AndesTextField *helperTextField;
 
 @property(nonatomic) AndesDropDownMenuCell *cell;
 @property(nonatomic) NSMutableArray *cellArray;
@@ -42,7 +43,7 @@
 
 - (void) setup {
     self.andesDropdown.delegate = self;
-    [self.andesDropdown setTriggerType:[[FormDropdownTrigger alloc]initWithTitle:@"Title" placeholder:@"Placeholder"]];
+    [self.andesDropdown setTriggerType:[[FormDropdownTrigger alloc]initWithTitle:@"Title" placeholder:@"Placeholder" helperText:@"Helper Text"]];
     [self.andesDropdown setMenuType:[[DropdownBottomSheetMenu alloc]initWithSeparatorStyle:AndesSeparatorStyleSingleLine
                                                                          numberOfLines:1
                                                                                   rows:self.cellArray
@@ -101,7 +102,7 @@
         self.textField.state = AndesTextInputStateIdle;
         self.placelholderField.state = AndesTextInputStateIdle;
         [self.segmentedControl setEnabled:false];
-        [self updateFormDropdownView:@"" placeholder:@"Placeholder para Dropdown"];
+        [self updateFormDropdownView:@"" placeholder:@"Placeholder para Dropdown" helperText:@"Palceholder Helper text"];
     }
     else if (radioButton == self.radioButtonStandAlone) {
         self.radioButtonForm.status = AndesRadioButtonStatusUnselected;
@@ -120,8 +121,8 @@
     NSLog(@"%ld", (long)indexPath.row);
 }
 
-- (void)updateFormDropdownView:(NSString *)title placeholder: (NSString *)placeholder  {
-    [self.andesDropdown setTriggerType:[[FormDropdownTrigger alloc]initWithTitle:title placeholder:placeholder]];
+- (void)updateFormDropdownView:(NSString *)title placeholder: (NSString *)placeholder helperText: (NSString *)helperText {
+    [self.andesDropdown setTriggerType:[[FormDropdownTrigger alloc]initWithTitle:title placeholder:placeholder helperText:helperText]];
 }
 
 - (void)updateStandaloneDropdownView:(AndesStandaloneSize)size {
@@ -140,7 +141,7 @@
 
 - (void)andesTextFieldDidEndEditing:(AndesTextField *)textField {
     if ([self.andesDropdown.triggerType isMemberOfClass:[FormDropdownTrigger class]]) {
-        [self updateFormDropdownView:self.textField.text placeholder:self.placelholderField.text];
+        [self updateFormDropdownView:self.textField.text placeholder:self.placelholderField.text helperText:self.helperTextField.text];
     }
     else {
         [self updateStandaloneDropdownView:AndesStandaloneSizeMedium];

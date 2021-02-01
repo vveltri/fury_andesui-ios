@@ -17,12 +17,13 @@ class DropdownViewController: UIViewController {
     @IBOutlet var textField: AndesTextField!
     @IBOutlet var placelholderField: AndesTextField!
     @IBOutlet var segmentedControl: UISegmentedControl!
-
+    @IBOutlet var helperTextField: AndesTextField!
+    
     var cell: [AndesDropDownMenuCell] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        helperTextField.delegate = self
         textField.delegate = self
         placelholderField.delegate = self
         segmentedControl.isEnabled = false
@@ -72,8 +73,8 @@ class DropdownViewController: UIViewController {
         segmentedControl.selectedSegmentIndex = 1
     }
 
-    func updateFormDropdownView(title: String = "", placeholder: String = "Placeholder para Dropdown") {
-        andesDropdown.triggerType = FormDropdownTrigger(title: title, placeholder: placeholder)
+    func updateFormDropdownView(title: String = "", placeholder: String = "Placeholder para Dropdown", helperText: String = "") {
+        andesDropdown.triggerType = FormDropdownTrigger(title: title, placeholder: placeholder, helperText: helperText)
     }
 
     func updateStandaloneDropdownView(size: AndesStandaloneSize = .medium) {
@@ -100,7 +101,7 @@ extension DropdownViewController: AndesDropdownDelegate {
 extension DropdownViewController: AndesTextFieldDelegate {
     func andesTextFieldDidEndEditing(_ textField: AndesTextField) {
         if andesDropdown.triggerType.isKind(of: FormDropdownTrigger.self) {
-            self.updateFormDropdownView(title: self.textField.text, placeholder: self.placelholderField.text)
+            self.updateFormDropdownView(title: self.textField.text, placeholder: self.placelholderField.text, helperText: self.helperTextField.text)
         } else {
             self.updateStandaloneDropdownView()
         }

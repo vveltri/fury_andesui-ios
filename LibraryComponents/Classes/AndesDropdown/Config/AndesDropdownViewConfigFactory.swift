@@ -20,7 +20,8 @@ internal class AndesDropdownViewConfigFactory {
             return AndesDropdownViewConfig(placeholderText: formTrigger?.placeholder,
                                            icon: isSelected ? AndesIcons.chevronUp20 : AndesIcons.chevronDown20,
                                            title: formTrigger?.title,
-                                           iconColor: UIColor.Andes.blueML500)
+                                           iconColor: UIColor.Andes.blueML500,
+                                           helperText: formTrigger?.helperText)
         case .standalone:
             return AndesDropdownViewConfig(icon: isSelected ? AndesIcons.chevronUp20 : AndesIcons.chevronDown20,
                                            font: standAloneSize.font,

@@ -1,11 +1,25 @@
 # Unpublished
+
+# v3.20.0
+### 🚀 Features
+- Added icons to LocalIcons | Authors: [@rbasualdo7](https://github.com/rbasualdo7)
+
+### 🛠 Bug fixes
+- DatePicker: Fix calendar back button | Authors: [@AndriuCoelho](https://github.com/AndriuCoelho)
+- Fix round CGRect in Coachmark | Authors: [@ccalcagnoml](https://github.com/ccalcagnoml)
+
+# v3.19.0
 ### 🚀 Features
 - AndesBottomSheet: Add configurable presentation size | Authors: [@inayabarb](https://github.com/inayabarb)
 - AndesBottomSheet: Fix - Take safe area into account when calculating content size | Authors: [@inayabarb](https://github.com/inayabarb)
 - Added icons to LocalIcons | Authors: [@rbasualdo7](https://github.com/rbasualdo7)
+- Added Helper text to Dropdwn  | Authors:[@dabeltran95](https://github.com/dabeltran95)
 
 ### 🛠 Bug fixes
 - Fixed overlap between helper icon and helper message | Authors: [@andreikedaMELI](https://github.com/andreikedaMELI) 
+
+### ⚙️ Other
+- Disable bot for issues | Authors [joalonspint](https://github.com/joalonsopint)
 
 # v3.18.1
 ### 🚀 Features

@@ -59,7 +59,7 @@ class AndesDatePickerHeaderView: UICollectionReusableView {
         return label
     }()
 
-    private let previousButton: UIButton = {
+    private(set) var previousButton: UIButton = {
         let button = UIButton(type: .custom)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.addTarget(self, action: #selector(didTouchPreviousMonth), for: .touchUpInside)
@@ -150,7 +150,8 @@ class AndesDatePickerHeaderView: UICollectionReusableView {
     func togglePreviousButton(days: [AndesDayDatePicker]) {
         previousButton.isEnabled = true
         for day in days {
-            if day.isCurrentMonth && day.dueDate != nil {
+            let datesAreInTheSameMonth = Calendar.current.isDate(day.date, equalTo: Date(), toGranularity: .month)
+            if datesAreInTheSameMonth && day.dueDate != nil {
                 previousButton.isEnabled = false
                 break
             }

@@ -13,6 +13,7 @@
 		023ADCEC24ACD4050076C3F3 /* ThumbnailObjCViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 023ADCEA24ACD4050076C3F3 /* ThumbnailObjCViewController.m */; };
 		023ADCED24ACD4050076C3F3 /* ThumbnailObjCViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 023ADCEB24ACD4050076C3F3 /* ThumbnailObjCViewController.xib */; };
 		02683A5B24B36E1000C3FD9A /* AndesThumbnailTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02683A5A24B36E1000C3FD9A /* AndesThumbnailTests.swift */; };
+		0304F4D425C0B73300A6BA72 /* AndesDatePickerHeaderViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0304F4D325C0B73300A6BA72 /* AndesDatePickerHeaderViewTests.swift */; };
 		0323A40E25607FC6001A480F /* DatePickerRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323A40D25607FC6001A480F /* DatePickerRouter.swift */; };
 		0323A414256085A2001A480F /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0323A412256085A2001A480F /* DatePickerViewController.swift */; };
 		0323A415256085A2001A480F /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0323A413256085A2001A480F /* DatePickerViewController.xib */; };
@@ -192,6 +193,7 @@
 		023ADCEA24ACD4050076C3F3 /* ThumbnailObjCViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThumbnailObjCViewController.m; sourceTree = "<group>"; };
 		023ADCEB24ACD4050076C3F3 /* ThumbnailObjCViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ThumbnailObjCViewController.xib; sourceTree = "<group>"; };
 		02683A5A24B36E1000C3FD9A /* AndesThumbnailTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndesThumbnailTests.swift; sourceTree = "<group>"; };
+		0304F4D325C0B73300A6BA72 /* AndesDatePickerHeaderViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndesDatePickerHeaderViewTests.swift; sourceTree = "<group>"; };
 		0323A40D25607FC6001A480F /* DatePickerRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerRouter.swift; sourceTree = "<group>"; };
 		0323A412256085A2001A480F /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		0323A413256085A2001A480F /* DatePickerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
@@ -469,6 +471,7 @@
 			children = (
 				034D60122563E6AB00978518 /* AndesDatePickerAbstractViewTests.swift */,
 				034D60142563F08300978518 /* AndesDayDatePickerTests.swift */,
+				0304F4D325C0B73300A6BA72 /* AndesDatePickerHeaderViewTests.swift */,
 			);
 			name = DatePicker;
 			sourceTree = "<group>";
@@ -1500,6 +1503,7 @@
 				9C592C0C2450A6B70038785E /* AndesTextFieldSideComponentTests.swift in Sources */,
 				80D6915924EC0E98002CF3BC /* AndesCoachmarkNavBarTests.swift in Sources */,
 				80D6914F24E438C2002CF3BC /* MockSwift.swift in Sources */,
+				0304F4D425C0B73300A6BA72 /* AndesDatePickerHeaderViewTests.swift in Sources */,
 				F85E052324AF79900059C6FA /* AndesRadioButtonTest.swift in Sources */,
 				80D6915124E449B0002CF3BC /* AndesCoachmarkViewMock.swift in Sources */,
 				9CAD81E923FD66ED00D43EB9 /* AndesIconsProviderTests.swift in Sources */,

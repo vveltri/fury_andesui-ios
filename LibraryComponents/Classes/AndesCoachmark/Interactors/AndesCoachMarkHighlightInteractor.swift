@@ -35,8 +35,8 @@ class AndesCoachMarkHighlightInteractor {
 
     private func highlightedRectCalculation() -> CGRect {
         let margin = self.margin + 4
-        let rectConverted = view.convert(view.bounds, to: overlayView)
-
+        var rectConverted = view.convert(view.bounds, to: overlayView)
+        rectConverted = rectConverted.roundCGRect()
         //If the highlightRect dosen't fit in bodyView, it will be cutted
         //Horizontal excess
         let rectConvertedCuttedX = max(rectConverted.minX, margin)
@@ -112,5 +112,16 @@ extension AndesCoachMarkHighlightInteractor: AndesCoachMarkHighlightInteractorPr
 
     func isHighlightedViewBelow() -> Bool {
         return view.convert(view.frame, to: overlayView).midY > bodyViewBounds.midY
+    }
+}
+
+extension CGRect {
+
+    func round1000(_ double: CGFloat) -> Double {
+        return Double(round(1000*double)/1000)
+    }
+
+    func roundCGRect() -> CGRect {
+        return CGRect(x: round1000(self.minX), y: round1000(self.minY), width: round1000(self.width), height: round1000(self.height))
     }
 }

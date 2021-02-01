@@ -40,6 +40,7 @@ class AndesDropdownFormViewDefault: AndesDropdownAbstractView {
         self.textField.label = config.title
         self.textField.placeholder = config.placeholderText
         self.textField.rightContent = rightComponent
+        self.textField.helper = config.helperText
     }
 }
 

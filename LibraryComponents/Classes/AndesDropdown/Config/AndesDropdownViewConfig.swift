@@ -14,4 +14,5 @@ internal struct AndesDropdownViewConfig {
     var font: AndesFontStyle?
     var heightChevron: CGFloat?
     var iconColor: UIColor
+    var helperText: String?
 }

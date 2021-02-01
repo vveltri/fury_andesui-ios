@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "andes_ui_to_agree_32.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "andes_ui_to_agree_32-2.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "andes_ui_to_agree_32-3.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

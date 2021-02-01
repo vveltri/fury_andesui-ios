@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -12,6 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="DropdownViewController" customModule="AndesUI_DemoApp" customModuleProvider="target">
             <connections>
                 <outlet property="andesDropdown" destination="3UI-Tw-b38" id="A7j-Kk-atE"/>
+                <outlet property="helperTextField" destination="wNm-Ad-RQG" id="kYe-px-RnF"/>
                 <outlet property="placelholderField" destination="ueW-zv-COV" id="A1m-ip-qh1"/>
                 <outlet property="radioButtonForm" destination="n7k-Fk-vAR" id="nL7-7Z-Ieo"/>
                 <outlet property="radioButtonStandAlone" destination="83I-6w-8TV" id="O4L-xs-EPE"/>
@@ -26,7 +25,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Eo2-EQ-tfh">
-                    <rect key="frame" x="42" y="101" width="330" height="101"/>
+                    <rect key="frame" x="42" y="57" width="330" height="101"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n7k-Fk-vAR" customClass="AndesRadioButton" customModule="AndesUI">
                             <rect key="frame" x="0.0" y="0.0" width="330" height="50"/>
@@ -51,7 +50,7 @@
                     </constraints>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1u5-RD-iQa" customClass="AndesTextField" customModule="AndesUI">
-                    <rect key="frame" x="42" y="200" width="330" height="50"/>
+                    <rect key="frame" x="42" y="156" width="330" height="50"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="e7x-3e-qEH"/>
@@ -60,8 +59,19 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Título para Dropdown"/>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wNm-Ad-RQG" customClass="AndesTextField" customModule="AndesUI">
+                    <rect key="frame" x="42" y="277" width="330" height="50"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Edy-US-3Qv"/>
+                        <constraint firstAttribute="height" constant="50" id="yhP-tw-QRh"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Placelholder para Helper text"/>
+                    </userDefinedRuntimeAttributes>
+                </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ueW-zv-COV" customClass="AndesTextField" customModule="AndesUI">
-                    <rect key="frame" x="42" y="255" width="330" height="50"/>
+                    <rect key="frame" x="42" y="211" width="330" height="50"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="50" id="wxT-yq-kur"/>
@@ -70,15 +80,8 @@
                         <userDefinedRuntimeAttribute type="string" keyPath="placeholder" value="Placelholder para Dropdown"/>
                     </userDefinedRuntimeAttributes>
                 </view>
-                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UI-Tw-b38" customClass="AndesDropdown" customModule="AndesUI">
-                    <rect key="frame" x="70" y="321" width="274" height="80"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="80" id="Paw-gv-wR8"/>
-                    </constraints>
-                </view>
                 <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="4KR-Hx-8zz">
-                    <rect key="frame" x="42" y="62" width="330" height="32"/>
+                    <rect key="frame" x="42" y="18" width="330" height="32"/>
                     <segments>
                         <segment title="Small"/>
                         <segment title="Medium"/>
@@ -88,12 +91,20 @@
                         <action selector="valueChangeSegmented" destination="-1" eventType="valueChanged" id="itj-mQ-haI"/>
                     </connections>
                 </segmentedControl>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3UI-Tw-b38" customClass="AndesDropdown" customModule="AndesUI">
+                    <rect key="frame" x="70" y="343" width="274" height="90"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="90" id="Paw-gv-wR8"/>
+                    </constraints>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="Eo2-EQ-tfh" firstAttribute="top" secondItem="4KR-Hx-8zz" secondAttribute="bottom" constant="8" symbolic="YES" id="3PZ-zT-Lm4"/>
                 <constraint firstItem="4KR-Hx-8zz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="18" id="AKL-IT-iG7"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="wNm-Ad-RQG" secondAttribute="trailing" constant="42" id="EdS-Ae-nKk"/>
                 <constraint firstItem="4KR-Hx-8zz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="GJp-yR-KID"/>
                 <constraint firstItem="3UI-Tw-b38" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="70" id="HqA-oj-y14"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="3UI-Tw-b38" secondAttribute="trailing" constant="70" id="LuI-Vi-JRO"/>
@@ -101,11 +112,13 @@
                 <constraint firstItem="1u5-RD-iQa" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="YyO-82-5ny"/>
                 <constraint firstItem="Eo2-EQ-tfh" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="bye-A5-ved"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="1u5-RD-iQa" secondAttribute="trailing" constant="42" id="eFP-PS-McB"/>
+                <constraint firstItem="wNm-Ad-RQG" firstAttribute="top" secondItem="ueW-zv-COV" secondAttribute="bottom" constant="16" id="evO-Eb-G0L"/>
                 <constraint firstItem="ueW-zv-COV" firstAttribute="top" secondItem="1u5-RD-iQa" secondAttribute="bottom" constant="5" id="g8Y-zb-g1z"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="ueW-zv-COV" secondAttribute="trailing" constant="42" id="i4e-Ka-xco"/>
+                <constraint firstItem="3UI-Tw-b38" firstAttribute="top" secondItem="wNm-Ad-RQG" secondAttribute="bottom" constant="16" id="jMR-Gg-Jts"/>
                 <constraint firstItem="1u5-RD-iQa" firstAttribute="top" secondItem="n7k-Fk-vAR" secondAttribute="bottom" constant="49" id="reM-AK-JGA"/>
+                <constraint firstItem="wNm-Ad-RQG" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="ucd-zP-um5"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Eo2-EQ-tfh" secondAttribute="trailing" constant="42" id="y5S-uH-lEa"/>
-                <constraint firstItem="3UI-Tw-b38" firstAttribute="top" secondItem="ueW-zv-COV" secondAttribute="bottom" constant="16" id="z5h-9P-Gv2"/>
                 <constraint firstItem="ueW-zv-COV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="42" id="zC4-eQ-The"/>
             </constraints>
             <point key="canvasLocation" x="85.507246376811594" y="97.767857142857139"/>
