@@ -78,12 +78,12 @@ class AndesCheckboxDefaultView: UIView, AndesCheckboxView {
     func initialize() {
         self.label.setAndesStyle(style: AndesStyleSheetManager.styleSheet.bodyM(color: config.textColor))
         self.label.isAccessibilityElement = false
-        checkboxView.backgroundColor = config.buttonBackgroundColor
     }
 
     func updateView() {
         clearView()
         self.label.text = config.title
+        checkboxView.backgroundColor = config.buttonBackgroundColor
         updateBoxesViews()
         updateBoxesBorders()
         updateIcons()
